@@ -79,7 +79,7 @@ ul { list-style: none; }
   gap: 20px;
   padding: 14px 20px;
 }
-.header__logo-img { height: 46px; width: auto; }
+.header__logo-img { height: 40px; width: auto; }
 
 .nav__list {
   display: flex;
@@ -319,7 +319,7 @@ ul { list-style: none; }
   padding-bottom: 40px;
   border-bottom: 1px solid #222;
 }
-.footer__logo-img { height: 50px; width: auto; }
+.footer__logo-img { height: 44px; width: auto; }
 .footer__slogan { margin: 16px 0; color: #ccc; font-style: italic; }
 .footer__social {
   display: inline-flex;
