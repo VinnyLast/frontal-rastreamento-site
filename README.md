@@ -26,7 +26,7 @@ Alguns conteúdos foram deixados como placeholder e devem ser substituídos ante
 - Números de estatísticas (clientes atendidos, anos de mercado, veículos rastreados, tempo médio de resposta) — em `index.html`, seção `#numeros`, atributo `data-target`.
 - Valores dos planos na seção "Serviços".
 - Depoimentos reais de clientes na seção "Depoimentos".
-- As logos (`logo-color.svg` e `logo-white.svg`) são placeholders gerados em SVG. Substitua pelos arquivos de logo definitivos da marca (pode manter os mesmos nomes de arquivo, inclusive convertendo para `.png` se preferir — só ajuste a extensão referenciada em `index.html`).
+- Logos oficiais (`logo-color.png` e `logo-white.png`) já aplicadas, reaproveitadas dos projetos `bot-frontal`/`chat-frontal`.
 
 ## Deploy em VPS (Hostinger ou similar)
 
