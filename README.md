@@ -8,12 +8,12 @@ Site institucional de página única (single page) para a Frontal Rastreamento, 
 site-frontal/
 ├── index.html          # Página única com todas as seções
 ├── style.css           # Estilos (mobile-first, responsivo)
-├── script.js           # Menu mobile, animações, contadores e formulário
+├── script.js           # Menu mobile, animações e formulário
 ├── assets/
 │   └── img/
-│       ├── logo-color.svg   # Logo colorida (fundo claro)
-│       ├── logo-white.svg   # Logo branca (fundo escuro)
-│       └── favicon.svg      # Ícone do site
+│       ├── logo-color.png   # Logo colorida (fundo claro)
+│       ├── logo-white.png   # Logo branca (fundo escuro)
+│       └── favicon.png      # Ícone do site (recortado da própria logo)
 ├── .gitignore
 └── README.md
 ```
@@ -23,8 +23,7 @@ site-frontal/
 Alguns conteúdos foram deixados como placeholder e devem ser substituídos antes de publicar em produção:
 
 - Textos institucionais da seção "Sobre" (revisar com o cliente).
-- Números de estatísticas (clientes atendidos, anos de mercado, veículos rastreados, tempo médio de resposta) — em `index.html`, seção `#numeros`, atributo `data-target`.
-- Valores dos planos na seção "Serviços".
+- Preço em destaque na seção "Serviços" (atualmente fixo em R$ 49,90/mês — em `index.html`, `.pricing-highlight__price`).
 - Depoimentos reais de clientes na seção "Depoimentos".
 - Logos oficiais (`logo-color.png` e `logo-white.png`) já aplicadas, reaproveitadas dos projetos `bot-frontal`/`chat-frontal`.
 

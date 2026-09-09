@@ -36,40 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  // Contadores animados
-  var counters = document.querySelectorAll('.stat__number');
-  function animateCounter(el) {
-    var target = parseInt(el.getAttribute('data-target'), 10);
-    if (isNaN(target)) { return; } // valores TODO ainda não preenchidos
-    var duration = 1500;
-    var start = 0;
-    var startTime = null;
-
-    function step(timestamp) {
-      if (!startTime) startTime = timestamp;
-      var progress = Math.min((timestamp - startTime) / duration, 1);
-      el.textContent = Math.floor(progress * (target - start) + start);
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        el.textContent = target;
-      }
-    }
-    requestAnimationFrame(step);
-  }
-
-  if ('IntersectionObserver' in window) {
-    var counterObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    counters.forEach(function (el) { counterObserver.observe(el); });
-  }
-
   // Formulário de contato -> redireciona para WhatsApp com a mensagem preenchida
   var form = document.getElementById('contactForm');
   var formNote = document.getElementById('formNote');

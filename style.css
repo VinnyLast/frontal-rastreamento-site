@@ -164,22 +164,10 @@ ul { list-style: none; }
 
 /* ===== Sobre ===== */
 .sobre {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 50px;
-  align-items: center;
+  max-width: 780px;
+  margin: 0 auto;
 }
 .sobre__text p { margin-bottom: 16px; color: #444; }
-.sobre__stats {
-  display: flex;
-  gap: 24px;
-  background: var(--color-bg-alt);
-  padding: 30px;
-  border-radius: var(--radius);
-}
-.stat-mini { display: flex; flex-direction: column; gap: 4px; }
-.stat-mini strong { font-size: 2rem; color: var(--color-primary); font-weight: 800; }
-.stat-mini span { font-size: 0.85rem; color: #555; }
 
 /* ===== Grids / Cards ===== */
 .grid { display: grid; gap: 28px; }
@@ -209,50 +197,22 @@ ul { list-style: none; }
 .card h3 { font-size: 1.15rem; margin-bottom: 10px; }
 .card p { color: #555; font-size: 0.95rem; }
 
-/* ===== Planos ===== */
-.plan-card {
+/* ===== Preço em destaque ===== */
+.pricing-highlight {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
   background: var(--color-bg-alt);
   border-radius: var(--radius);
-  padding: 40px 30px;
-  position: relative;
+  padding: 48px 30px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  gap: 10px;
 }
-.plan-card--highlight {
-  background: var(--color-black);
-  color: var(--color-white);
-  transform: scale(1.03);
-}
-.plan-card--highlight .plan-card__price span { color: #bbb; }
-.plan-card__tag {
-  position: absolute;
-  top: -14px;
-  left: 30px;
-  background: var(--color-primary);
-  color: var(--color-black);
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 6px 14px;
-  border-radius: 50px;
-}
-.plan-card__price { font-size: 1.8rem; font-weight: 800; color: var(--color-primary); }
-.plan-card__price span { font-size: 0.9rem; font-weight: 400; color: #777; }
-.plan-card__list { display: flex; flex-direction: column; gap: 10px; margin: 6px 0; }
-.plan-card__list li { padding-left: 22px; position: relative; font-size: 0.95rem; }
-.plan-card__list li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--color-primary);
-  font-weight: 700;
-}
-
-/* ===== Números ===== */
-.stats { text-align: center; }
-.stat { display: flex; flex-direction: column; gap: 6px; }
-.stat__number { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; color: var(--color-primary); }
-.stat__label { font-size: 0.9rem; color: #ccc; }
+.pricing-highlight__text { font-size: 1rem; color: #555; }
+.pricing-highlight__price { font-size: 2.6rem; font-weight: 800; color: var(--color-primary); margin-bottom: 8px; }
+.pricing-highlight__price span { font-size: 1rem; font-weight: 400; color: #777; }
 
 /* ===== Depoimentos ===== */
 .testimonial {
@@ -337,7 +297,9 @@ ul { list-style: none; }
 .footer__col ul { display: flex; flex-direction: column; gap: 10px; }
 .footer__col a:hover { color: var(--color-primary); }
 .footer__col p { color: #ccc; margin-bottom: 10px; }
-.footer__bottom { text-align: center; padding: 20px 0; font-size: 0.85rem; color: #888; }
+.footer__bottom { text-align: center; padding: 20px 0; font-size: 0.85rem; color: #888; display: flex; flex-direction: column; gap: 6px; }
+.footer__credit a { color: var(--color-primary); font-weight: 600; }
+.footer__credit a:hover { text-decoration: underline; }
 
 /* ===== WhatsApp flutuante ===== */
 .whatsapp-float {
