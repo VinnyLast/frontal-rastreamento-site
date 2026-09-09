@@ -24,7 +24,7 @@ Alguns conteúdos foram deixados como placeholder e devem ser substituídos ante
 
 - Textos institucionais da seção "Sobre" (revisar com o cliente).
 - Preço em destaque na seção "Serviços" (atualmente fixo em R$ 49,90/mês — em `index.html`, `.pricing-highlight__price`).
-- Depoimentos reais de clientes na seção "Depoimentos".
+- Depoimentos na seção "Depoimentos" são exemplos fictícios (nomes e textos inventados) — substituir por depoimentos reais de associados.
 - Logos oficiais (`logo-color.png` e `logo-white.png`) já aplicadas, reaproveitadas dos projetos `bot-frontal`/`chat-frontal`.
 
 ## Deploy em VPS (Hostinger ou similar)
