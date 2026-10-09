@@ -36,6 +36,13 @@ document.addEventListener('DOMContentLoaded', function () {
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  // Mapa ao vivo: com movimento reduzido, congela no estado final (rota completa)
+  var liveSvg = document.getElementById('liveMapSvg');
+  if (liveSvg && window.matchMedia('(prefers-reduced-motion: reduce)').matches && liveSvg.pauseAnimations) {
+    liveSvg.setCurrentTime(5.2);
+    liveSvg.pauseAnimations();
+  }
+
   // Vídeo institucional: carrega e toca só quando visível; pausa ao sair
   var video = document.getElementById('heroVideo');
   var playBtn = document.getElementById('videoPlay');
