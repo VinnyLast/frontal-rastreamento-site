@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -103,18 +103,88 @@
   </div>
 </section>
 
-<!-- Vídeo institucional -->
-<section class="video-section" id="video" aria-label="Vídeo institucional da Frontal Rastreamento">
-  <video class="video-section__video" id="heroVideo" muted loop playsinline preload="none" poster="assets/img/hero-poster.jpg" data-autoplay="true">
-    <source data-src="assets/video/hero-bg.webm" type="video/webm">
-    <source data-src="assets/video/hero-bg.mp4" type="video/mp4">
-  </video>
-  <button type="button" class="video-section__play" id="videoPlay" aria-label="Reproduzir vídeo" hidden>
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-  </button>
-  <div class="video-section__caption">
-    <span class="eyebrow">Presença em todo o Brasil</span>
-    <p>Da Bahia para o território nacional.</p>
+<!-- Cobertura: radar + mapa da Bahia -->
+<section class="coverage" id="cobertura" aria-label="Cobertura e central de monitoramento em Feira de Santana">
+  <div class="container coverage__inner">
+    <div class="coverage__map reveal" aria-hidden="true">
+      <svg class="coverage__svg" id="coverageSvg" viewBox="0 0 600 620" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <clipPath id="bahiaClip">
+            <path d="M23.8 262.3L56.4 184.8L68.3 161.0L148.5 125.2L219.8 107.3L267.3 65.6L338.6 71.5L386.1 65.6L421.8 41.7L475.2 20.9L499.0 53.7L519.8 65.6L537.6 101.3L558.4 131.2L573.3 196.7L555.4 226.5L522.8 262.3L505.0 286.2L478.2 327.9L469.3 342.8L473.5 393.5L478.2 441.2L472.3 491.8L463.4 545.5L463.4 566.3L445.5 584.2L436.6 605.1L398.0 587.2L362.4 575.3L326.7 536.5L326.7 476.9L273.3 429.2L243.6 405.4L219.8 363.7L166.3 369.6L139.6 372.6L83.2 318.9L32.7 283.2Z"/>
+          </clipPath>
+          <linearGradient id="sweepGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#FFA100" stop-opacity="0"/>
+            <stop offset="1" stop-color="#FFA100" stop-opacity="0.55"/>
+          </linearGradient>
+        </defs>
+
+        <text x="18" y="30" class="coverage__tag">BAHIA, BRASIL</text>
+
+        <path class="coverage__state" pathLength="1" d="M23.8 262.3L56.4 184.8L68.3 161.0L148.5 125.2L219.8 107.3L267.3 65.6L338.6 71.5L386.1 65.6L421.8 41.7L475.2 20.9L499.0 53.7L519.8 65.6L537.6 101.3L558.4 131.2L573.3 196.7L555.4 226.5L522.8 262.3L505.0 286.2L478.2 327.9L469.3 342.8L473.5 393.5L478.2 441.2L472.3 491.8L463.4 545.5L463.4 566.3L445.5 584.2L436.6 605.1L398.0 587.2L362.4 575.3L326.7 536.5L326.7 476.9L273.3 429.2L243.6 405.4L219.8 363.7L166.3 369.6L139.6 372.6L83.2 318.9L32.7 283.2Z">
+          <animate attributeName="stroke-dashoffset" values="1;0;0" keyTimes="0;0.3;1" dur="12s" repeatCount="indefinite"/>
+        </path>
+
+        <g class="coverage__cities" fill="#ffffff" fill-opacity="0.55">
+          <circle cx="505" cy="284.4" r="3"/><circle cx="365.9" cy="397" r="3"/><circle cx="119.4" cy="235.5" r="3"/>
+          <circle cx="386.1" cy="72.1" r="3"/><circle cx="472.3" cy="392.9" r="3"/><circle cx="431.9" cy="556.8" r="3"/>
+        </g>
+        <g class="coverage__city-labels" fill="#ffffff" fill-opacity="0.45">
+          <text x="514" y="304">Salvador</text><text x="375" y="417">Vitória da Conquista</text>
+          <text x="128" y="255">Barreiras</text><text x="395" y="92">Juazeiro</text>
+        </g>
+
+        <g clip-path="url(#bahiaClip)">
+          <g transform="translate(477 242.6)">
+            <g class="coverage__sweep">
+              <path d="M0 0L260 0A260 260 0 0 1 225 130Z" fill="url(#sweepGrad)"/>
+              <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5s" repeatCount="indefinite"/>
+            </g>
+            <circle r="6" fill="none" stroke="#FFA100" stroke-width="2">
+              <animate attributeName="r" values="6;170" dur="3.6s" repeatCount="indefinite"/>
+              <animate attributeName="stroke-opacity" values="0.9;0" dur="3.6s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="6" fill="none" stroke="#FFA100" stroke-width="2">
+              <animate attributeName="r" values="6;170" dur="3.6s" begin="1.2s" repeatCount="indefinite"/>
+              <animate attributeName="stroke-opacity" values="0.9;0" dur="3.6s" begin="1.2s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="6" fill="none" stroke="#FFA100" stroke-width="2">
+              <animate attributeName="r" values="6;170" dur="3.6s" begin="2.4s" repeatCount="indefinite"/>
+              <animate attributeName="stroke-opacity" values="0.9;0" dur="3.6s" begin="2.4s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="60" fill="none" stroke="#FFA100" stroke-opacity="0.18"/>
+            <circle r="120" fill="none" stroke="#FFA100" stroke-opacity="0.14"/>
+          </g>
+        </g>
+
+        <g transform="translate(477 242.6)" class="coverage__pin">
+          <path d="M0 0C0 0-12-12-12-21A12 12 0 1 1 12-21C12-12 0 0 0 0Z" fill="#FFA100"/>
+          <circle cx="0" cy="-21" r="4.5" fill="#0a0a0a"/>
+          <text x="-20" y="-24" text-anchor="end" class="coverage__city-name">FEIRA DE SANTANA</text>
+          <text x="-20" y="-9" text-anchor="end" class="coverage__city-sub">Sede da Frontal</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="coverage__text reveal">
+      <span class="eyebrow">Cobertura</span>
+      <h2 class="section__title">Da Bahia para todo o Brasil</h2>
+      <p>Nossa central fica em Feira de Santana e acompanha seu veículo de onde ele estiver, em todo o território nacional.</p>
+      <ul class="coverage__list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          Central de monitoramento 24h
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          Monitoramento em todo o território nacional
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          Resposta rápida em caso de furto ou roubo
+        </li>
+      </ul>
+      <a href="https://wa.me/5575999928958" target="_blank" rel="noopener" class="btn btn--whatsapp">Fale no WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -374,6 +444,6 @@
   <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5C10 9 9.5 7.6 9.3 7c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg>
 </a>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>

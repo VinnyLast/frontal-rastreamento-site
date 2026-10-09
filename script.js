@@ -36,52 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  // Mapa ao vivo: com movimento reduzido, congela no estado final (rota completa)
-  var liveSvg = document.getElementById('liveMapSvg');
-  if (liveSvg && window.matchMedia('(prefers-reduced-motion: reduce)').matches && liveSvg.pauseAnimations) {
-    liveSvg.setCurrentTime(5.2);
-    liveSvg.pauseAnimations();
-  }
-
-  // Vídeo institucional: carrega e toca só quando visível; pausa ao sair
-  var video = document.getElementById('heroVideo');
-  var playBtn = document.getElementById('videoPlay');
-  if (video) {
-    var loaded = false;
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    var loadSources = function () {
-      if (loaded) return;
-      loaded = true;
-      video.querySelectorAll('source[data-src]').forEach(function (s) {
-        s.src = s.getAttribute('data-src');
-      });
-      video.load();
-    };
-    var play = function () {
-      loadSources();
-      var p = video.play();
-      if (p && p.catch) p.catch(function () {});
-    };
-
-    if (reduceMotion) {
-      if (playBtn) {
-        playBtn.hidden = false;
-        playBtn.addEventListener('click', function () {
-          playBtn.hidden = true;
-          play();
-        });
-      }
-    } else if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) { play(); } else { video.pause(); }
-        });
-      }, { threshold: 0.25 }).observe(video);
-    } else {
-      play();
+  // Animações SVG: com movimento reduzido, congela num quadro com tudo visível
+  [['liveMapSvg', 5.2], ['coverageSvg', 4.2]].forEach(function (item) {
+    var svg = document.getElementById(item[0]);
+    if (svg && window.matchMedia('(prefers-reduced-motion: reduce)').matches && svg.pauseAnimations) {
+      svg.setCurrentTime(item[1]);
+      svg.pauseAnimations();
     }
-  }
+  });
 
   // Formulário de contato -> redireciona para WhatsApp com a mensagem preenchida
   var form = document.getElementById('contactForm');
