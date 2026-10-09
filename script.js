@@ -64,29 +64,4 @@ document.addEventListener('DOMContentLoaded', function () {
     document.documentElement.addEventListener("mouseleave", function () { glow.classList.remove("is-active"); });
   }
 
-  // Formulário de contato -> redireciona para WhatsApp com a mensagem preenchida
-  var form = document.getElementById('contactForm');
-  var formNote = document.getElementById('formNote');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name = document.getElementById('name').value.trim();
-      var phone = document.getElementById('phone').value.trim();
-      var message = document.getElementById('message').value.trim();
-
-      if (!name || !phone || !message) {
-        formNote.style.color = '#c0392b';
-        formNote.textContent = 'Por favor, preencha todos os campos.';
-        return;
-      }
-
-      var text = 'Olá! Meu nome é ' + name + ' (telefone: ' + phone + '). ' + message;
-      var url = 'https://wa.me/5575999928958?text=' + encodeURIComponent(text);
-      formNote.style.color = '#2a7d2a';
-      formNote.textContent = 'Redirecionando para o WhatsApp...';
-      window.open(url, '_blank', 'noopener');
-      form.reset();
-    });
-  }
-
 });

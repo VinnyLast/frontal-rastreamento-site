@@ -8,7 +8,7 @@ Site institucional de página única (single page) para a Frontal Rastreamento, 
 site-frontal/
 ├── index.html          # Página única com todas as seções
 ├── style.css           # Estilos (mobile-first, responsivo)
-├── script.js           # Menu mobile, animações e formulário
+├── script.js           # Menu mobile e animações
 ├── assets/
 │   ├── video/           # hero-bg.mp4 e hero-bg.webm (vídeo institucional)
 │   └── img/
