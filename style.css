@@ -477,7 +477,7 @@ ul { list-style: none; }
   right: 24px;
   width: 60px;
   height: 60px;
-  background: #25D366;
+  background: var(--color-primary);
   color: var(--color-white);
   border-radius: 50%;
   display: flex;
