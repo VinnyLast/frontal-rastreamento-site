@@ -312,6 +312,9 @@ ul { list-style: none; }
 .card__icon svg { width: 26px; height: 26px; }
 .card h3 { font-size: 1.15rem; margin-bottom: 10px; }
 .card p { color: #555; font-size: 0.95rem; }
+.card__list { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.card__list li { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #444; }
+.card__list svg { width: 16px; height: 16px; color: var(--color-primary); flex-shrink: 0; }
 .card__links { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
 .card__links a {
   display: flex;
