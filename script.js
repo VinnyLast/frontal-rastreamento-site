@@ -45,6 +45,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // Brilho leve que acompanha o mouse (só em dispositivos com mouse)
+  var glow = document.getElementById("cursorGlow");
+  if (glow && window.matchMedia("(hover: hover)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var gx = 0, gy = 0, ticking = false;
+    document.addEventListener("mousemove", function (e) {
+      gx = e.clientX; gy = e.clientY;
+      glow.classList.add("is-active");
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(function () {
+          glow.style.setProperty("--mx", gx + "px");
+          glow.style.setProperty("--my", gy + "px");
+          ticking = false;
+        });
+      }
+    });
+    document.documentElement.addEventListener("mouseleave", function () { glow.classList.remove("is-active"); });
+  }
+
   // Formulário de contato -> redireciona para WhatsApp com a mensagem preenchida
   var form = document.getElementById('contactForm');
   var formNote = document.getElementById('formNote');
