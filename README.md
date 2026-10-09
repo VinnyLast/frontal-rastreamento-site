@@ -10,6 +10,7 @@ site-frontal/
 ├── style.css           # Estilos (mobile-first, responsivo)
 ├── script.js           # Menu mobile, animações e formulário
 ├── assets/
+│   ├── video/           # hero-bg.mp4 e hero-bg.webm (vídeo institucional)
 │   └── img/
 │       ├── logo-color.png   # Logo colorida (fundo claro)
 │       ├── logo-white.png   # Logo branca (fundo escuro)

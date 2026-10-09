@@ -36,6 +36,46 @@ document.addEventListener('DOMContentLoaded', function () {
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  // Vídeo institucional: carrega e toca só quando visível; pausa ao sair
+  var video = document.getElementById('heroVideo');
+  var playBtn = document.getElementById('videoPlay');
+  if (video) {
+    var loaded = false;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var loadSources = function () {
+      if (loaded) return;
+      loaded = true;
+      video.querySelectorAll('source[data-src]').forEach(function (s) {
+        s.src = s.getAttribute('data-src');
+      });
+      video.load();
+    };
+    var play = function () {
+      loadSources();
+      var p = video.play();
+      if (p && p.catch) p.catch(function () {});
+    };
+
+    if (reduceMotion) {
+      if (playBtn) {
+        playBtn.hidden = false;
+        playBtn.addEventListener('click', function () {
+          playBtn.hidden = true;
+          play();
+        });
+      }
+    } else if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { play(); } else { video.pause(); }
+        });
+      }, { threshold: 0.25 }).observe(video);
+    } else {
+      play();
+    }
+  }
+
   // Formulário de contato -> redireciona para WhatsApp com a mensagem preenchida
   var form = document.getElementById('contactForm');
   var formNote = document.getElementById('formNote');
