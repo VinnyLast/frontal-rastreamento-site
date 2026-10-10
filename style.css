@@ -235,19 +235,25 @@ ul { list-style: none; }
 }
 .coverage__svg { display: block; width: 100%; height: auto; max-height: 80vh; margin: 0 auto; }
 .coverage__tag { fill: var(--color-primary); font-size: 14px; font-weight: 600; letter-spacing: 2px; opacity: 0.8; }
+.coverage__states {
+  fill: rgba(255,161,0,0.035);
+  stroke: rgba(255,161,0,0.55);
+  stroke-width: 0.9;
+  stroke-linejoin: round;
+}
 .coverage__state {
-  fill: rgba(255,161,0,0.06);
+  fill: rgba(255,161,0,0.14);
   stroke: var(--color-primary);
-  stroke-width: 2.5;
+  stroke-width: 1.8;
   stroke-linejoin: round;
   stroke-dasharray: 1;
   stroke-dashoffset: 0;
   filter: drop-shadow(0 0 8px rgba(255,161,0,0.7));
 }
-.coverage__city-labels text { font-size: 11px; }
+.coverage__city-labels text { font-size: 10px; }
 .coverage__pin { filter: drop-shadow(0 0 8px rgba(255,161,0,0.9)); }
-.coverage__city-name { fill: var(--color-white); font-size: 15px; font-weight: 700; }
-.coverage__city-sub { fill: var(--color-primary); font-size: 11px; }
+.coverage__city-name { fill: var(--color-white); font-size: 13px; font-weight: 700; paint-order: stroke; stroke: #0a0a0a; stroke-width: 3px; stroke-linejoin: round; }
+.coverage__city-sub { fill: var(--color-primary); font-size: 10px; paint-order: stroke; stroke: #0a0a0a; stroke-width: 3px; stroke-linejoin: round; }
 .coverage__text .section__title { color: var(--color-white); margin-bottom: 16px; }
 .coverage__text p { color: #ccc; margin-bottom: 20px; }
 .coverage__list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
