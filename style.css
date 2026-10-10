@@ -236,10 +236,11 @@ ul { list-style: none; }
 .coverage__svg { display: block; width: 100%; height: auto; max-height: 80vh; margin: 0 auto; }
 .coverage__tag { fill: var(--color-primary); font-size: 14px; font-weight: 600; letter-spacing: 2px; opacity: 0.8; }
 .coverage__states {
-  fill: rgba(255,161,0,0.035);
-  stroke: rgba(255,161,0,0.55);
+  fill: rgba(255,161,0,0.1);
+  stroke: rgba(255,161,0,0.65);
   stroke-width: 0.9;
   stroke-linejoin: round;
+  filter: drop-shadow(0 0 5px rgba(255,161,0,0.35));
 }
 .coverage__state {
   fill: rgba(255,161,0,0.14);
@@ -250,7 +251,7 @@ ul { list-style: none; }
   stroke-dashoffset: 0;
   filter: drop-shadow(0 0 8px rgba(255,161,0,0.7));
 }
-.coverage__city-labels text { font-size: 10px; }
+.coverage__city-labels text { font-size: 10px; paint-order: stroke; stroke: #0a0a0a; stroke-width: 2.5px; }
 .coverage__pin { filter: drop-shadow(0 0 8px rgba(255,161,0,0.9)); }
 .coverage__city-name { fill: var(--color-white); font-size: 13px; font-weight: 700; paint-order: stroke; stroke: #0a0a0a; stroke-width: 3px; stroke-linejoin: round; }
 .coverage__city-sub { fill: var(--color-primary); font-size: 10px; paint-order: stroke; stroke: #0a0a0a; stroke-width: 3px; stroke-linejoin: round; }
